@@ -8,36 +8,36 @@
 			this.aukstis = deze.aukstis;
 		}
 		
-		present() {  //metodai - taip vadinamos funkcijos priklausancios klasei
-					// metodai dirba su savybemis per kreipini this. savybes bendros visems metodams 
+		present() {  			//metodai - taip vadinamos funkcijos priklausancios klasei
+							// metodai dirba su savybemis per kreipini this. savybes bendros visems metodams 
 			
-			return 'ilgis: ' +  this.ilgis + ' aukštis: ' +  this.aukstis + ' plotis: ' + this.plotis + ' tūris: ' + this.turis();
+			return 'ilgis: ' +  this.ilgis + ' aukštis: ' +  this.aukstis + ' plotis: ' + this.plotis + ' tūris: ' + this.turis();    //return apraso ka turi grazint ir kaip veikt
 		}
 		
 		turis() {
 		
-			return this.ilgis * this.plotis * this.aukstis;
+			return this.ilgis * this.plotis * this.aukstis;  //  return this sujungia padauginant visus matmenis, suskaiciojant turi
 		}
 		
-		arTilps( daikto_ilgis, daikto_plotis, daikto_aukstis ) {
+		arTilps( daikto_ilgis, daikto_plotis, daikto_aukstis ) {		//paimamos reiksmes
 
-			var ar_tilps = false;
+			var ar_tilps = false;   // kintamajam ar_tilps suteikiama klaidos reiksme to atveju jai ar tilps neatitinka dotus parametrus
 			
-			if ( ( daikto_ilgis * daikto_plotis * daikto_aukstis ) < this.turis() ) {
+			if ( ( daikto_ilgis * daikto_plotis * daikto_aukstis ) < this.turis() ) { // paimamos reiksmes
 			
 				if (  
 						( ! ar_tilps )
 					&& 
 						( 
-								daikto_ilgis < this.ilgis
+								daikto_ilgis < this.ilgis 
 							&& 
-								daikto_plotis < this.plotis
+								daikto_plotis < this.plotis			//suteikiama parametru pozicija nustatitose reiksmese / bus kartojama keleta kartu keiciant reiksmiu pozicijas.
 							&&
 								daikto_aukstis < this.aukstis
 						)
 				) {
 				
-					ar_tilps = true;
+					ar_tilps = true;	// kintamajam ar_tilps suteikiama tesos reiksme to atveju jai ar_tilps atitinka dotus parametrus
 				}
 						
 				if (  
@@ -111,11 +111,8 @@
 					ar_tilps = true;
 				}				
 				
-				
-				
-				
 			}
 			
-			return ar_tilps;
+			return ar_tilps; 			// uzdaromas ciklas
 		}
 	}
