@@ -67,12 +67,13 @@
 					if ( flag_pasiimti_min )  {
 					
 						t_miestai = i;
-					
+						flag_pasiimti_min = false; // bandit be ir su..
 					} else {
 					
 						if ( miestai [ t_miestai ].tankis_nuo()<miestai [ i ].tankis_iki() ) {
 						
 							t_miestai = i;
+							
 						}
 					
 					}
